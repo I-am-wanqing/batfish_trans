@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="projects.batfish-common-protocol.src.test.antlr4.org.batfish.grammar.recovery.recovery" options="-XepDisableAllChecks" />
+      <module name="projects.batfish-common-protocol.src.test.antlr4.org.batfish.grammar.recovery_inline_alts.recovery_inline_alts" options="-XepDisableAllChecks" />
+      <module name="projects.batfish-common-protocol.src.test.antlr4.org.batfish.grammar.recovery_rule_alts.recovery_rule_alts" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.arista.arista" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cisco.cisco" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cisco_asa.cisco_asa" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cisco_nxos.cisco_nxos" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cisco_xr.cisco_xr" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cumulus_concatenated.cumulus_concatenated" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cumulus_interfaces.cumulus_interfaces" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cumulus_nclu.cumulus_nclu" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.cumulus_ports.cumulus_ports" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.f5_bigip_imish.f5_bigip_imish" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.f5_bigip_structured.f5_bigip_structured" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.flatjuniper.flatjuniper" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.flatvyos.flatvyos" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.fortios.fortios" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.frr.frr" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.iptables.iptables" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.juniper.juniper" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.mrv.mrv" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.palo_alto.palo_alto" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.palo_alto_nested.palo_alto_nested" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.routing_table.eos.eos" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.routing_table.ios.ios" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.routing_table.nxos.nxos" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.grammar.vyos.vyos" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.vendor.a10.grammar.grammar" options="-XepDisableAllChecks" />
+      <module name="projects.batfish.src.main.antlr4.org.batfish.vendor.check_point_gateway.grammar.grammar" options="-XepDisableAllChecks" />
+    </option>
+  </component>
+</project>

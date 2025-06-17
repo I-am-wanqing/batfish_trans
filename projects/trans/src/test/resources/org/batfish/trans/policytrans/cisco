@@ -1,0 +1,50 @@
+router bgp 1111
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ bgp cluster-id <LOOPBACK-SERVICIO-IPV4>
+
+ address-family ipv4 labeled-unicast
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> remote-as 1111
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> update-source <LOOPBACK-LBGP-IPV4>
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> description <name-H1>
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> send-label
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> route-map IMPORT-LBGP-IN in
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> route-map EXPORT-LBGP-OUT out
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> next-hop-self
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> send-community both
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> aigp
+  neighbor <LOOPBACK-LBGP-HL1-REMOTE> route-reflector-client
+  maximum-prefix 8000 50 warning-only
+ exit-address-family
+
+route-map IMPORT-LBGP-IN permit 10
+ match ip address prefix-list PREFIX-LIST-LOOPBACK-HL1-PEER
+ match protocol bgp
+ set local-preference 100
+ ! 不修改，直接跳转逻辑在 IOS 中以多个序号实现
+
+route-map IMPORT-LBGP-IN permit 20
+ match source-protocol bgp
+ match ip route-source prefix-list LOOPBACK-PRINCIPAL-HL1-PEER
+ set aigp 9
+
+route-map IMPORT-LBGP-IN permit 30
+ match ip address prefix-list LOOPBACKS-FUSION-orlonger
+ match community COMMUNITIES-ALL-BGP-LU-PREF-1
+ match protocol bgp
+ ! 跳转逻辑通过序号顺序控制
+
+route-map IMPORT-LBGP-IN permit 40
+ ! 无条件转跳，直接允许
+ set local-preference 100
+
+route-map IMPORT-LBGP-IN permit 50
+ match community COMMUNITIES-ALL-BGP-LU-PREF-2
+ set local-preference 8
+
+route-map IMPORT-LBGP-IN permit 60
+ match ip address prefix-list LOOPBACKS-FUSION-orlonger
+ match community COMMUNITIES-RUTAS-BGP-LU
+ ! 默认接受
+
+route-map IMPORT-LBGP-IN deny 999
