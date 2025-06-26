@@ -9,6 +9,7 @@ junit_tests(
         "//projects/trans/src/test/resources/org/batfish/grammar/cisco/testconfigs",
         "//projects/trans/src/test/resources/org/batfish/grammar/juniper/testconfigs",
         "//projects/trans/src/test/resources/org/batfish/job/juniper",
+        "//projects/trans/src/test/resources/org/batfish/trans/filetrans",
         "//projects/trans/src/test/resources/org/batfish/trans/policytrans",
     ],
     deps = [

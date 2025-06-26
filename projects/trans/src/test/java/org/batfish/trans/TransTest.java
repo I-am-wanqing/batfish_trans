@@ -29,6 +29,9 @@ public final class TransTest {
 
     private static final String POLICY_TESTCONFIGS = "org/batfish/trans/policytrans/";
 
+
+    private static final String FILE_TESTCONFIGS = "org/batfish/trans/filetrans/";
+
     @Rule
     public TemporaryFolder _folder = new TemporaryFolder();
 
@@ -73,6 +76,17 @@ public final class TransTest {
     public void testPolicyTrans() {
         ParseVendorConfigurationResult parseVendorConfigurationResult_cisco = parseCisco( POLICY_TESTCONFIGS+ "cisco");
         ParseVendorConfigurationResult parseVendorConfigurationResult_juniper = parseJuniper(POLICY_TESTCONFIGS + "juniper.cfg");
+        CiscoConfiguration vendorConfiguration_cisco = (CiscoConfiguration) parseVendorConfigurationResult_cisco.getVendorConfiguration();
+        JuniperConfiguration vendorConfiguration_juniper = (JuniperConfiguration) parseVendorConfigurationResult_juniper.getVendorConfiguration();
+        System.out.println(vendorConfiguration_cisco.toString());
+        System.out.println(vendorConfiguration_juniper.toString());
+        System.out.printf("----- end -----");
+    }
+
+    @Test
+    public void testFileTrans() {
+        ParseVendorConfigurationResult parseVendorConfigurationResult_cisco = parseCisco( FILE_TESTCONFIGS + "as2dept1_cisco.cfg");
+        ParseVendorConfigurationResult parseVendorConfigurationResult_juniper = parseJuniper(FILE_TESTCONFIGS + "as2dept1_juniper.cfg");
         CiscoConfiguration vendorConfiguration_cisco = (CiscoConfiguration) parseVendorConfigurationResult_cisco.getVendorConfiguration();
         JuniperConfiguration vendorConfiguration_juniper = (JuniperConfiguration) parseVendorConfigurationResult_juniper.getVendorConfiguration();
         System.out.println(vendorConfiguration_cisco.toString());
